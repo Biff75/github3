@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+  body{
+    background:url("https://media.giphy.com/media/3oxRmvU3GAJay6F60g/giphy.gif");
+    background-size:cover;
+  }
+  h2 {
+    text-align: center;
+  } 
+  .test { 
+    border: 7px;
+    background:url("https://media.giphy.com/media/3oxRmvU3GAJay6F60g/giphy.gif");
+    background-color: yellow
+    border-style: groove;
+    border-color: red;
+    border-width: 5px;
+    font-style: times;
+    font-size: 20px;
+    position: absolute;
+    border-width: 10px;
+    padding-left: 15px;
+    text-align: center;
+    color:white;
+      }
+    div{
+      left:500px;
+      top:300px;
+      width:400px;
+
+    }
+    .clock {
+      font-size:30px;
+      font-style: times;
+    }
+</style>
+
+<body>
+  <div class="test">
+
+  <h2>Attempted Clock</h2>
+ 
+  <script language="JavaScript">
+
+  function showTime() {
+    var timeNow = new Date();
+    var hours   = timeNow.getHours();
+    var minutes = timeNow.getMinutes();
+    var seconds = timeNow.getSeconds();
+    var timeString = "" + ((hours > 12) ? hours - 12 : hours);
+      timeString  += ((minutes < 10) ? ":0" : ":") + minutes;
+      timeString  += ((seconds < 10) ? ":0" : ":") + seconds;
+      timeString  += (hours >= 12) ? " P.M." : " A.M.";
+    document.htmlClock.timeField.value = timeString;
+      timerID = setTimeout("showTime()", 1000);
+}
+  
+</script>
+    <button type="button" class="clock"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+    What time is it?</button>
+
+  <p id="demo"></p>
+  </div>
+</body>
+</html>
